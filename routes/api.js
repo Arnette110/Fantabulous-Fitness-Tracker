@@ -2,12 +2,6 @@ const router = require("express").Router();
 const db = require("../models/indexModel");
 const path = require("path");
 
-// db.Workout.create({name: "first workout"}).then(dbWorkout => {
-//     console.log(dbWorkout);
-// })
-// .catch(({message}) => {
-//     console.log(message)
-// })
 router.get("/exercise", (req, res) => {
   res.sendFile(path.join(__dirname, "../public/exercise.html"));
 });
@@ -35,7 +29,6 @@ router.put("/api/workouts/:id", (req, res) => {
   )
 
     .then(dbWorkout => {
-      console.log(dbWorkout);
       res.json(dbWorkout);
     })
     .catch(err => {
@@ -53,9 +46,8 @@ router.post("/api/workouts", ({ body }, res) => {
     });
 });
 
-router.get("/populated", (req, res) => {
+router.get("/api/workouts/range", (req, res) => {
   db.Workout.find({})
-    .populate("exercises")
     .then(dbWorkout => {
       res.json(dbWorkout);
     })
