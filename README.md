@@ -9,8 +9,7 @@
 This application allows a user to create a new workout and add exercises to/complete/continue said workout. It was created using Mongo database with a Mongoose schema and it handles routes with Express.
 
 ## URL to application on Heroku
-
-
+https://rocky-castle-45497.herokuapp.com/
 
 
 ## Instructions
